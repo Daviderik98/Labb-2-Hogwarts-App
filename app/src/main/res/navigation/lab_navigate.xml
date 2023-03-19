@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lab_navigate"
+    app:startDestination="@id/firstFragment">
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.myattemptlabb2.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_enterGreatHall"
+            app:destination="@id/secondFragment" />
+        <action
+            android:id="@+id/action_directlyToNames"
+            app:destination="@id/newsletterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.myattemptlabb2.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" >
+        <action
+            android:id="@+id/action_whenChosenHouse"
+            app:destination="@id/thirdFragment" />
+        <action
+            android:id="@+id/action_restartingPartTwo"
+            app:destination="@id/firstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.example.myattemptlabb2.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" >
+        <action
+            android:id="@+id/action_houseTowardsBlank"
+            app:destination="@id/blankFragmentLast" />
+        <action
+            android:id="@+id/action_fromHouseToName"
+            app:destination="@id/newsletterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsletterFragment"
+        android:name="com.example.myattemptlabb2.NewsletterFragment"
+        android:label="fragment_newsletter"
+        tools:layout="@layout/fragment_newsletter" >
+
+        <action
+            android:id="@+id/action_namesTowardsBlank"
+            app:destination="@id/blankFragmentLast" />
+        <action
+            android:id="@+id/action_fromNameToHouse"
+            app:destination="@id/secondFragment" />
+        <action
+            android:id="@+id/action_restartingPartOne"
+            app:destination="@id/firstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragmentLast"
+        android:name="com.example.myattemptlabb2.BlankFragmentLast"
+        android:label="fragment_blank_last"
+        tools:layout="@layout/fragment_blank_last" >
+        <action
+            android:id="@+id/action_backToHousing"
+            app:destination="@id/secondFragment" />
+        <action
+            android:id="@+id/action_backToNaming"
+            app:destination="@id/newsletterFragment" />
+        <action
+            android:id="@+id/action_BlankToRestart"
+            app:destination="@id/firstFragment" />
+    </fragment>
+</navigation>
